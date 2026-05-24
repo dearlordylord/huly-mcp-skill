@@ -23,7 +23,7 @@ npx skills add dearlordylord/huly-mcp-skill
 
 - Safe verification with read-only tools
 - Tool selection for Huly issues, documents, comments, custom fields, test management, workspace, and activity workflows
-- Guardrails for destructive tools, project-scoped IDs, custom fields, assignees, activity IDs, and issue relation direction
+- Guardrails for destructive tools, project-scoped IDs, custom fields, and assignees
 - Short setup pointer to the canonical MCP server README
 
 ## Skill

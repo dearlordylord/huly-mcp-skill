@@ -30,12 +30,6 @@ After setup, verify with read-only calls:
 - Use `list_workspace_members` for workspace-member operations such as role updates. For issue assignment, use an assignee email address or display name, not a workspace member account ID.
 - Keep Huly comments and descriptions in markdown; the MCP server handles Huly markup conversion.
 
-## High-Value Caveats
-
-- `list_issue_relations` returns `blockedBy` issues, bidirectional issue links, and linked documents. It does not return issues that the current issue blocks; call `list_issue_relations` on the target issue to inspect that direction.
-- `list_activity` needs an internal `objectId` and `objectClass`, not an issue key like `PROJ-123`; use IDs/classes returned by read tools. Reaction and save tools take activity `messageId` values.
-- Use `fulltext_search` when the target object type is unknown.
-
 ## References
 
 Read `references/tool-selection.md` when choosing among similar Huly MCP tools or planning issue, document, dependency, deletion, search, or toolset-scoping work.

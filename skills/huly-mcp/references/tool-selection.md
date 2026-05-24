@@ -49,7 +49,7 @@ Inspect dependencies:
 
 1. `get_issue`
 2. `list_issue_relations`
-3. Remember `list_issue_relations` returns `blockedBy`, bidirectional links, and documents; it does not list issues that the current issue blocks
+3. Review `blockedBy`, `blocks`, bidirectional links, and documents
 4. For linked docs, use `get_document`
 
 Delete safely:
