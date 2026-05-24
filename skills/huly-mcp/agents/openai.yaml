@@ -1,6 +1,6 @@
 interface:
   display_name: "Huly MCP"
-  short_description: "Connect agents to Huly project work."
-  default_prompt: "Use $huly-mcp to set up Huly MCP and work with my Huly workspace."
+  short_description: "Choose and use Huly MCP tools for project work."
+  default_prompt: "Use $huly-mcp to choose the right Huly MCP tools for my workspace task."
 policy:
   allow_implicit_invocation: true

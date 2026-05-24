@@ -37,6 +37,14 @@ Create a spec or note:
 2. `create_document`
 3. `link_document_to_issue` if it belongs with a tracker item
 
+Plan or run QA work:
+
+1. `list_test_projects` to find the test-management project
+2. `list_test_suites` and `list_test_cases` to inspect existing coverage before creating new cases
+3. `list_test_plans` or `get_test_plan` before modifying a plan
+4. `run_test_plan` when executing a full plan; use `create_test_run` and result tools for custom runs
+5. `list_test_results` and `update_test_result` to record `passed`, `failed`, `blocked`, or `untested` outcomes
+
 Inspect dependencies:
 
 1. `get_issue`

@@ -1,12 +1,15 @@
 # Troubleshooting
 
+For full client-specific setup, use the canonical MCP server README:
+https://github.com/dearlordylord/huly-mcp#installation
+
 ## MCP Server Does Not Start
 
 Check:
 
 - Node.js can run `npx -y @firfi/huly-mcp@latest`.
 - Env var names are exact: `HULY_URL`, `HULY_WORKSPACE`, and either `HULY_TOKEN` or `HULY_EMAIL` + `HULY_PASSWORD`.
-- The client config uses `"command": "npx"` and `"args": ["-y", "@firfi/huly-mcp@latest"]`.
+- The client config runs `npx -y @firfi/huly-mcp@latest`. Some clients split that into `"command": "npx"` plus `"args"`, while OpenCode uses a single command array.
 - Restart the MCP client after config changes.
 
 ## Authentication Fails
@@ -16,7 +19,7 @@ Check:
 - `HULY_URL` points to the instance root, not a workspace page.
 - `HULY_WORKSPACE` is the workspace identifier expected by Huly.
 - The configured token or password is current.
-- If a password contains shell-special characters such as `*`, `%`, `!`, or `#`, prefer editing the MCP JSON config directly instead of passing the password through `claude mcp add -e`. JSON preserves those characters without shell interpretation. `HULY_TOKEN` also avoids password quoting issues.
+- If a password contains shell-special characters such as `*`, `%`, `!`, or `#`, edit the MCP config file directly instead of passing the password through CLI flags like `-e` or `--env`. Use `~/.codex/config.toml` for Codex, Claude JSON config for Claude clients, `~/.config/opencode/opencode.json` for OpenCode, the canonical README install section for VS Code or Cursor paths, and the configured MCP file for Windsurf or other clients. Avoid committing workspace config files that contain real credentials. `HULY_TOKEN` also avoids password quoting issues.
 - On self-hosted Huly, repeated bad password attempts can return `PasswordLoginLocked`. Stop retrying password auth. Reset `global_account.account.failed_login_attempts` to `0` for the account in CockroachDB, or use `HULY_TOKEN` if available. CockroachDB credentials are usually in the Huly `compose.yml` or container environment.
 
 ## No Tools Appear
