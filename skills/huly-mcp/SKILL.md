@@ -28,6 +28,7 @@ After setup, verify with read-only calls:
 - Use `list_statuses`, `list_components`, or `list_milestones` with a project identifier to discover valid project-scoped IDs before writes.
 - Use `list_custom_fields` for custom-field IDs. Use `get_custom_field_values` to inspect values already set on a target issue or card.
 - Use `list_workspace_members` for workspace-member operations such as role updates. For issue assignment, use an assignee email address or display name, not a workspace member account ID.
+- Use `fulltext_search` first when the user names content but the Huly object type is unclear.
 - Keep Huly comments and descriptions in markdown; the MCP server handles Huly markup conversion.
 
 ## References
