@@ -5,7 +5,7 @@
 
 Agent Skill for installing, configuring, troubleshooting, and using [`@firfi/huly-mcp`](https://www.npmjs.com/package/@firfi/huly-mcp).
 
-This repo contains a thin skill wrapper. It does not reimplement Huly access; it teaches agents how to install and use the MCP server correctly.
+This repo contains a thin skill wrapper that teaches agents how to install and use the MCP server correctly.
 
 ## Install
 

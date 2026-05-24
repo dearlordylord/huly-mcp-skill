@@ -15,8 +15,9 @@ Check:
 
 - `HULY_URL` points to the instance root, not a workspace page.
 - `HULY_WORKSPACE` is the workspace identifier expected by Huly.
-- Token auth and password auth are not mixed accidentally.
-- Passwords with shell-special characters are quoted if configured through a shell command.
+- The configured token or password is current.
+- If a password contains shell-special characters such as `*`, `%`, `!`, or `#`, prefer editing the MCP JSON config directly instead of passing the password through `claude mcp add -e`. JSON preserves those characters without shell interpretation. `HULY_TOKEN` also avoids password quoting issues.
+- On self-hosted Huly, repeated bad password attempts can return `PasswordLoginLocked`. Stop retrying password auth. Reset `global_account.account.failed_login_attempts` to `0` for the account in CockroachDB, or use `HULY_TOKEN` if available. CockroachDB credentials are usually in the Huly `compose.yml` or container environment.
 
 ## No Tools Appear
 
@@ -44,6 +45,6 @@ Use read-only calls first:
 
 - `list_projects`
 - `get_workspace_info`
-- `list_statuses`
+- `list_statuses` with a project identifier from `list_projects`
 
 Do not test setup by creating, updating, or deleting Huly objects unless the user asks for that.
