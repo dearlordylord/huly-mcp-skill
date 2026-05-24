@@ -1,0 +1,11 @@
+{
+  "$schema": "https://skills.sh/schemas/skills.sh.schema.json",
+  "notGrouped": "bottom",
+  "groupings": [
+    {
+      "title": "Huly",
+      "description": "Agent workflow support for the @firfi/huly-mcp server.",
+      "skills": ["huly-mcp"]
+    }
+  ]
+}

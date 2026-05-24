@@ -10,6 +10,12 @@ This repo contains a thin skill wrapper. It does not reimplement Huly access; it
 ## Install
 
 ```bash
+npx skills add https://github.com/dearlordylord/huly-mcp-skill --skill huly-mcp
+```
+
+The shorter form also works because this repo currently contains one skill:
+
+```bash
 npx skills add dearlordylord/huly-mcp-skill
 ```
 
